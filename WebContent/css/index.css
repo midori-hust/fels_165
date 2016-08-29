@@ -72,6 +72,9 @@ html {
   position: relative;
 }
 
+.result-userlist{
+margin: 10px;
+}
 .footer {
   background-color: #4257b2;
   bottom: 0;

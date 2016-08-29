@@ -35,7 +35,7 @@
 						Export
 					</a>
 					<a href="<s:url value="/admin/categoryAdd"/>"
-						class="btn btn-social btn-linkedin"> <i class="fa fa-plus"></i>&nbsp;
+						class="btn btn-primary"> <i class="fa fa-plus"></i>&nbsp;
 						Add
 					</a>
 					 <a href="<s:url value="/admin/categoryDeleteAll"/>"

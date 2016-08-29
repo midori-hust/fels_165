@@ -22,6 +22,7 @@
 				</ul>
 			</div>
 		</div>
+		
 		<div class="col-md-9 col-sm-9 user-wrapper">
 			<div class="description">
 				<div class="row text-right">
@@ -31,10 +32,12 @@
 					</a> <a href="#"
 						class="btn btn-success" onclick="return notImplementDialog();"> <i class="fa fa-download"></i>&nbsp;
 						Export
-					</a> <a href="<s:url value="/admin/wordAdd"/>"
-						class="btn btn-social btn-linkedin"> <i class="fa fa-plus"></i>&nbsp;
+					</a> 
+					<a href="<s:url value="/admin/wordAdd"/>"
+						class="btn btn-primary"> <i class="fa fa-plus"></i>&nbsp;
 						Add
-					</a> <a href="<s:url value="/admin/wordDeleteAll"/>"
+					</a> 
+					<a href="<s:url value="/admin/wordDeleteAll"/>"
 						class="btn btn-danger" onclick="return confirmDeleteAll();"> <i
 						class="fa fa-remove"></i>&nbsp; Delete All
 					</a>

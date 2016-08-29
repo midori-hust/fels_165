@@ -33,13 +33,13 @@
 					<s:radio name="typeCurrent" list="#{'1':'Leaned','2':'Not Leaned','3':'All'}" value="3"/>
 					</s:else>
 					</s:else>
-					<s:property value='typeCurrent'/>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<input class="btn btn-default col-md-offset-9" type="submit"
-				value="Filter">
+			<button class="btn btn-default col-md-offset-9" type="submit">
+			 <span class="glyphicon glyphicon-filter"></span> Filter
+			 </button>
 		</div>
 	</form>
 	<hr>

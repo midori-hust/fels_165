@@ -5,7 +5,7 @@
         <s:iterator value="listCategory">
             <div class="row text-center">
                 <h3>
-                    <a href="${pageContext.request.contextPath}/lesson/learnLesson${category_id }">${name }</a>
+                    <a href="${pageContext.request.contextPath}/lesson/learnLesson${category_id}">${name}</a>
                 </h3>
             </div>
         </s:iterator>

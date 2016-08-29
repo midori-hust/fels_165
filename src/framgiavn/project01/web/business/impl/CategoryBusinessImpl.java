@@ -39,7 +39,7 @@ public class CategoryBusinessImpl implements CategoryBusiness {
 	}
 
 	@Override
-	public Category findCategoryById(int category_id) throws Exception {
+	public Category findCategoryById(int category_id){
 		try {
 			return categoryDAO.findCategoryById(category_id);
 		} catch (Exception e) {

@@ -14,6 +14,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import framgiavn.project01.web.business.ActivityBusiness;
+import framgiavn.project01.web.business.CategoryBusiness;
 import framgiavn.project01.web.business.LessonBusiness;
 import framgiavn.project01.web.business.LessonWordBusiness;
 import framgiavn.project01.web.business.WordAnswerBusiness;
@@ -36,6 +37,7 @@ public class LessonAction extends ActionSupport implements SessionAware {
 	private Word word = null;
 	private List<WordAnswer> listAnswer = null;
 	private int category_id;
+	private CategoryBusiness categoryBusiness;
 	private WordAnswer answer = null;
 	private List<Word> question = new ArrayList<Word>();
 	private List<WordAnswer> choice = new ArrayList<WordAnswer>();
@@ -43,6 +45,14 @@ public class LessonAction extends ActionSupport implements SessionAware {
 	private LessonWordBusiness lessonWordBusiness = null;
 	private ActivityBusiness activityBusiness = null;
 	
+	public CategoryBusiness getCategoryBusiness() {
+		return categoryBusiness;
+	}
+
+	public void setCategoryBusiness(CategoryBusiness categoryBusiness) {
+		this.categoryBusiness = categoryBusiness;
+	}
+
 	public LessonBusiness getLessonBusiness() {
 		return lessonBusiness;
 	}
@@ -168,6 +178,7 @@ public class LessonAction extends ActionSupport implements SessionAware {
 	public String learnLesson() {
 		category_id = getCategory_id();
 		session.put("category_id", category_id);
+		session.put("category", categoryBusiness.findCategoryById(category_id).getName());
 		System.out.println("anhnt debugger");
 		try {
 			List<Word> wordList = null;
@@ -198,7 +209,7 @@ public class LessonAction extends ActionSupport implements SessionAware {
 			this.listAnswer = wordAnswerBusiness.getWordAnswerByWordId(this.word.getWord_id());
 			
 			WordAnswer correctAnswer = null;
-			
+
 			if(answer != null && answer.getWord_id() != 0){
 				correctAnswer = wordAnswerBusiness.selectCorrectAnswer(answer.getWord_id());
 				choice = (List<WordAnswer>) session.get("choice");
@@ -232,8 +243,10 @@ public class LessonAction extends ActionSupport implements SessionAware {
 	public String endLearning() {
 		try {
 			question = (List<Word>) session.get("question");
+			question.remove(question.size() -1);
 			choice = (List<WordAnswer>) session.get("choice");
 			result = (List<Boolean>) session.get("result");
+			result.remove(result.size() -1);
 			int n = (int)session.get("category_id");
 			this.setCategory_id(n);
 			category_id = n;

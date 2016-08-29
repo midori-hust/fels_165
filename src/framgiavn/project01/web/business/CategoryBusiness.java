@@ -13,6 +13,6 @@ public interface CategoryBusiness {
 	public boolean deleteCategoryById(Integer category_id) throws Exception;
 	public boolean deleteAllCategory() throws Exception;
 	void addCategory(Category category) throws Exception;
-	public Category findCategoryById(int category_id) throws Exception;
+	public Category findCategoryById(int category_id);
 
 }
