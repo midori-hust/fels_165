@@ -64,9 +64,12 @@
 		</property>
 	</bean>
 
-
-
-
-
+	<bean id="RelationshipBusiness" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="framgiavn.project01.web.business.impl.RelationshipBusinessImpl">
+				<property name="relationshipDAO" ref="RelationshipDAO" />
+			</bean>
+		</property>
+	</bean>
 
 </beans>

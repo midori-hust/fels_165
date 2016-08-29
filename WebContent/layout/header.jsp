@@ -15,10 +15,26 @@
 			</button>
 			<a class="navbar-brand" href="<s:url value="/"/>"> FRAMGIA English Leaning</a>
 		</div>
+		<div class="col-sm-3 col-md-3 pull-left">
+			<form action="findByKeyWord" class="navbar-form" role="search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search"
+						name="key">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" style="padding:9px;">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
+
 				<li><a href="<s:url value="/"/>">HOME</a></li>
 				<li><a href="<s:url value="/about"/>">ABOUT</a></li>
+
+
 				<%
 					Object obj = request.getSession().getAttribute("user");
 					if (obj == null) {
@@ -28,11 +44,14 @@
 				<%
 					} else {
 				%>
+
 				<li><a href="<s:url value="/category/listAllCategory"/>">
 						CATEGORY </a></li>
 				<li><a href="<s:url value="/word/"/>"> WORDS </a></li>
-				<li><a href="<s:url value="/user/showProfile"/>"> PROFILE </a></li>
 				<li><a href="<s:url value="/user/signOut"/>"> SIGN OUT</a></li>
+				<li><a href="<s:url value="/user/showCurrentProfile"/>"> PROFILE </a></li>
+
+
 				<%
 					}
 				%>
