@@ -28,9 +28,22 @@
 		<action name="" class="springUserAction" method="homePage">
 			<result name="success">HomePage</result>
 		</action>
+
 		<action name="about" class="springUserAction" method="about">
 			<result name="success">About</result>
 		</action>
+
+
+		<action name="about" class="springUserAction" method="about">
+			<result name="success">About</result>
+		</action>
+
+		<action name="findByKeyWord" class="springUserAction" method="findByKeyWord">
+			<result name="success">UserList</result>
+			<result name="error">HomaPage</result>
+
+		</action>
+
 	</package>
 
 	<!-- ===== Include Web Module Configuration ===== -->

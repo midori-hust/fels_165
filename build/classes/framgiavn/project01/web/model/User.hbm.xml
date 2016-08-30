@@ -62,7 +62,7 @@
 		where user.username = :username
 		and	user.password = :password
 	</query>
-	
+
 	<query name="User.SelectAll">
 		select user
 		from User user
@@ -79,4 +79,11 @@
 		from User user
 		where user.isAdmin = :is_admin
 	</query>
+
+	<query name="User.SelectUserByKeyWord">
+		select user
+		from User user
+		where user.username like :key
+	</query>
+
 </hibernate-mapping>

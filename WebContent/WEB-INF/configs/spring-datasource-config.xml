@@ -46,7 +46,7 @@
 				<value>framgiavn/project01/web/model/WordAnswer.hbm.xml</value>
 				<value>framgiavn/project01/web/model/Lesson.hbm.xml</value>
 				<value>framgiavn/project01/web/model/Activity.hbm.xml</value>
-
+				<value>framgiavn/project01/web/model/Relationship.hbm.xml</value>
 			</list>
 		</property>
 
